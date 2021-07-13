@@ -44,12 +44,12 @@
             "@php artisan key:generate --ansi"
         ],
         "post-install-cmd": [
-            "php artisan migrate",
-            "php artisan clear-compiled",
-            "php artisan optimize",
             "chmod -R 777 bootstrap/cache/",
             "chmod -R 777 public/",
-            "chmod -R 777 storage/"
+            "chmod -R 777 storage/",
+            "php artisan migrate",
+            "php artisan clear-compiled",
+            "php artisan optimize"
         ]
     },
     "extra": {
