@@ -48,7 +48,6 @@
             "chmod -R 777 public/",
             "chmod -R 777 storage/",
             "php artisan migrate",
-            "php artisan clear-compiled",
             "php artisan optimize"
         ]
     },
