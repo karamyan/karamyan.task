@@ -143,7 +143,7 @@ abstract class BaseRepository
      */
     public function create(array $data, array $fillable = []): Model
     {
-        $this->model = new $this->model;
+        $this->model = new $this->model();
         $object = $this->fill($data, $this->model, $fillable);
         $object->save();
 
@@ -214,8 +214,7 @@ abstract class BaseRepository
         array $columns = ['*'],
         array $relations = [],
         bool $throwException = true
-    )
-    {
+    ) {
         return $throwException
             ? $this->getQuery()->with($relations)->findOrFail($id, $columns)
             : $this->getQuery()->with($relations)->find($id, $columns);
@@ -236,8 +235,7 @@ abstract class BaseRepository
         array $columns = ['*'],
         array $relations = [],
         bool $throwException = true
-    )
-    {
+    ) {
         return $throwException
             ? $this->getQuery()->with($relations)->where($credentials)->firstOrFail($columns)
             : $this->getQuery()->with($relations)->where($credentials)->first($columns);

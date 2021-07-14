@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Services\CRUDService;
 
-
 use Illuminate\Http\Request;
 
 /**

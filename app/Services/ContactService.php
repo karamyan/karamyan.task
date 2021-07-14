@@ -26,6 +26,6 @@ class ContactService extends CRUDAbstract
      */
     public function __construct(ContactRepository $contactRepository)
     {
-         $this->repository = $contactRepository;
+        $this->repository = $contactRepository;
     }
 }
