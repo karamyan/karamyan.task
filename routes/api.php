@@ -17,4 +17,5 @@ Route::post("/token/create", 'AuthController@login')->name('create_token');
 
 //All secure URL's
 Route::group(['middleware' => 'auth:sanctum'], function () {
+    Route::get("/contacts", 'ContactsController@list')->name('view_contacts');
 });
