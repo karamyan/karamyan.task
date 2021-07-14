@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\Repositories;
 
 use App\Models\Contact;
+use App\Models\ContactNote;
+use Illuminate\Database\Eloquent\Model;
 
 /**
  * Class ContactRepository
@@ -23,10 +25,10 @@ class ContactRepository extends BaseRepository
     /**
      * ContactRepository constructor.
      *
-     * @param Contact $category
+     * @param Contact $contact
      */
-    public function __construct(Contact $category)
+    public function __construct(Contact $contact)
     {
-        $this->model = $category;
+        $this->model = $contact;
     }
 }

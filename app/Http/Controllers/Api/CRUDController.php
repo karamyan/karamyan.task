@@ -35,9 +35,9 @@ class CRUDController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function list()
+    public function list(Request $request)
     {
-        return $this->crud->list();
+        return $this->crud->list($request);
     }
 
     /**

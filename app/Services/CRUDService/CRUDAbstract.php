@@ -11,14 +11,14 @@ use Illuminate\Http\Request;
  *
  * @package App\Services\CRUDService
  */
-class CRUDAbstract
+abstract class CRUDAbstract
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function list()
+    public function list(Request $request)
     {
         return $this->repository->all();
     }
@@ -42,7 +42,7 @@ class CRUDAbstract
      *
      * @return \Illuminate\Http\Response
      */
-    public function retrieve($id)
+    public function retrieve(int $id)
     {
         return $this->repository->find($id);
     }
@@ -67,7 +67,7 @@ class CRUDAbstract
      *
      * @return \Illuminate\Http\Response
      */
-    public function delete($id)
+    public function delete(int $id)
     {
         return $this->repository->delete($id);
     }

@@ -11,22 +11,32 @@ use App\Models\ContactNote;
  *
  * @package App\Repositories
  */
-class ContactNoteRepository
+class ContactNoteRepository extends BaseRepository
 {
     /**
      * @var array|string[]
      */
     protected array $fillable = [
-        'notes'
+        'notes', 'contact_id'
     ];
 
     /**
      * ContactNoteRepository constructor.
      *
-     * @param ContactNote $category
+     * @param ContactNote $contactNote
      */
-    public function __construct(ContactNote $category)
+    public function __construct(ContactNote $contactNote)
     {
-        $this->model = $category;
+        $this->model = $contactNote;
+    }
+
+    /**
+     * @param array $data
+     *
+     * @return mixed
+     */
+    public function createContactNote(array $data)
+    {
+        return $this->model->create($data);
     }
 }
